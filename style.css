@@ -1,0 +1,144 @@
+
+body{
+background-color:skyblue;
+overflow-x: hidden;
+}
+.main_wrapper{
+height: auto;
+width:100px;
+
+}
+.content_wrapper{
+width: 1400px;
+
+
+background: pink;
+} 
+.menubar{
+    width:1400px;
+  padding:1%;
+    background: gray;
+    display: flex;
+    position: fixed;
+    z-index: 12;
+
+    align-items: center;
+}
+.menubar li{
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+color: white;
+margin-left: 2%;
+}
+.menu-list{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+list-style:none;
+align-content: center;
+}
+#sidebar{
+    width: 200px;
+
+background: black;
+/* position: fixed;
+z-index: 10; */
+margin-top: 70px;
+}
+#content_area{
+    width: 1200px;
+background: pink;
+
+margin-top: 100px;
+}
+
+#footer{
+    width: 1400px;
+background: gray;
+height: 200px;
+}
+#form{
+
+    float: right;
+}
+
+.side-menu,.brands{
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 10%;
+
+}
+.side-menu,.brands{
+    list-style: none;
+}
+.side-menu a,.brands a{
+    color:white;
+    font-size: 20px;
+    margin-bottom: 6%;
+    margin-top: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.side-menu a:hover,.brands a:hover{
+    background: white;
+ text-decoration: none !important;
+    color:black !important;
+}
+#product_box{
+    text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+
+    margin-bottom: 10px;
+}
+#single_product{
+    padding:3%;
+  color:black;
+  margin:3%;
+ float: left;
+border:1px solid black;
+    margin-left: 20px;
+}
+
+.cart{
+color:blue !important;
+font-weight: bold !important;
+font-family: Arial, Helvetica, sans-serif;
+background: wheat !important;
+padding: 1%;
+border-radius: 5%;
+border :1 px solid gray;
+}
+.pro_img{
+    border: 2px solid gray;
+}
+.pro_title,.pro_price{
+    font-size: 18px;
+    padding: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.buttons,.pro_desc{
+    display: flex;
+    justify-content: center;
+        align-self: center;
+}
+.buttons input{
+   margin-right:5%;
+}
+.qty{
+    width: 40px;
+}
+.bill{
+   
+    text-align: center;
+    background:skyblue ;
+    border:2px solid black;
+    padding:1%; 
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
