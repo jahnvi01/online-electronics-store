@@ -231,7 +231,17 @@ $qty=array();
    if(isset($_POST['continue'])){
        header("location:index.php");
    }
-  
+
+    if(isset($_POST['checkout'])){
+  if(!isset($_SESSION['c_mail']))
+  {include('checkout.php');  
+  }
+  else{
+      include('payment.php');
+  }
+    }  
+ 
+    
     if(isset($_POST['update'])){
   
 

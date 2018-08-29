@@ -1,6 +1,8 @@
+
+
 <?php 
 include 'function/function.php';
-include 'function/check.php';
+session_start();
 ?>
 <html>
 
@@ -22,7 +24,7 @@ include 'function/check.php';
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li>Home</li>
+        <li><a href="index.php">Home</a></li>
       
         <li>My Account</li>
         <li>Sign up</li>
@@ -34,7 +36,8 @@ include 'function/check.php';
 </div>
 
 <form class="col-md-3" id="form">
-
+<input type="text" name="user_query" placeholder="search a product" >
+<input type="submit" name="search" value="search">
 
 </form>
 
@@ -55,35 +58,15 @@ include 'function/check.php';
 
 </div>
 <div id="content_area" class="col-md-10">
+<div>
+<h2 style="text-align:center;">Complete Your Payment with PapPal!!!</h2>
+<p style="text-align:center;"><img src="images/pay.jpeg" width="180" height="180"></p>
 
-<div id="product_box">
-<form action="" method="post" enctype="multipart/form-data">
-<table align="center" width="700" bgcolor="skyblue">
-<tr align="center">
-<td colspan="5"><h2>Update your cart or checkout</h2></td>
-</tr>
-<tr align="center">
-<th>Remove</th>
-<th>Product</th>
-<th>Quantity</th>
-<th>Total Price</th>
-</tr>
-<?php
-showbrands();
-showcats();
-
-showcart();
- ?>
- </table>
-
-<div class="buttons">
- <input value="Continue" name="continue" type="submit">
- <input type="submit" value="Update" name="update">
-<button name='checkout'>  <a href="checkout.php"> Check Out</a> </button>
 
 </div>
-</form>
 
+</div>
+<div id="product_box">
 
 </div>
 </div>

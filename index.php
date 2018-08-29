@@ -1,5 +1,6 @@
 <?php 
 include 'function/function.php';
+session_start();
 ?>
 <html>
 
@@ -21,7 +22,7 @@ include 'function/function.php';
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li>Home</li>
+        <li><a href="index.php">Home</a></li>
       
         <li>My Account</li>
         <li>Sign up</li>
@@ -57,11 +58,21 @@ include 'function/function.php';
 <div id="content_area" class="col-md-10">
     <div id="shop_cart">
 <h4><a href="cart.php" class="cart">Go to cart</a></h4>
+
 </div>
 <?php
 addcart();
 ?>
-
+<div class="login"> 
+<?php
+if(!isset($_SESSION['c_mail'])){
+echo "<a href='checkout.php'>Login</a>";
+}
+else{
+    echo "<a href='logout.php'>Logout</a>";
+}
+?>
+</div>
 <div id="product_box">
 <?php
 getproducts();

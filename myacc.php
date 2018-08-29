@@ -1,6 +1,6 @@
 <?php 
 include 'function/function.php';
-include 'function/check.php';
+session_start();
 ?>
 <html>
 
@@ -22,7 +22,7 @@ include 'function/check.php';
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li>Home</li>
+        <li><a href="index.php">Home</a></li>
       
         <li>My Account</li>
         <li>Sign up</li>
@@ -34,7 +34,8 @@ include 'function/check.php';
 </div>
 
 <form class="col-md-3" id="form">
-
+<input type="text" name="user_query" placeholder="search a product" >
+<input type="submit" name="search" value="search">
 
 </form>
 
@@ -55,36 +56,27 @@ include 'function/check.php';
 
 </div>
 <div id="content_area" class="col-md-10">
-
-<div id="product_box">
-<form action="" method="post" enctype="multipart/form-data">
-<table align="center" width="700" bgcolor="skyblue">
-<tr align="center">
-<td colspan="5"><h2>Update your cart or checkout</h2></td>
-</tr>
-<tr align="center">
-<th>Remove</th>
-<th>Product</th>
-<th>Quantity</th>
-<th>Total Price</th>
-</tr>
-<?php
-showbrands();
-showcats();
-
-showcart();
- ?>
- </table>
-
-<div class="buttons">
- <input value="Continue" name="continue" type="submit">
- <input type="submit" value="Update" name="update">
-<button name='checkout'>  <a href="checkout.php"> Check Out</a> </button>
+    <div id="shop_cart">
+<h4><a href="cart.php" class="cart">Go to cart</a></h4>
 
 </div>
-</form>
+<?php
+addcart();
+?>
+<div class="login"> 
+<?php
+if(!isset($_SESSION['c_mail'])){
+echo "<a href='checkout.php'>Login</a>";
+}
+else{
+    echo "<a href='logout.php'>Logout</a>";
+}
+?>
+</div>
+<div id="product_box">
+<?php
 
-
+?>
 </div>
 </div>
 </div>
