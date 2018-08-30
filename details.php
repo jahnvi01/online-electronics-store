@@ -21,12 +21,13 @@ include 'function/function.php';
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li>Home</li>
-        <li>All products</li>
-        <li>My Account</li>
-        <li>Sign up</li>
-        <li>Shopping Cart</li>
-        <li>Contact us</li>
+<li><a href="index.php">Home</a></li>
+      
+        <li><a href="myacc.php">My Account</a></li>
+        <li><a href="register.php">Sign up</a></li>
+        <li><a href="cart.php">Shopping Cart</a></li>
+        <li> <a href="admin/admin.php">Admin</a></l>
+       <li><a href="#">Contact us</a></li>
 
 
 </ul>
@@ -92,7 +93,7 @@ function getdetails(){
         echo "<div id='single_product'>
         
         <h3 class='pro_title'>$pro_title</h3>
-        <img class='pro_img' width='250' height='250' src='admin/product_img/$pro_image'>    
+        <a href='admin/product_img/$pro_image'>  <img class='pro_img' width='250' height='250' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='index.php'>Go back</a>
        <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>

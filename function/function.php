@@ -24,6 +24,7 @@ function getIp(){
 
     function getcats(){
     global $conn;
+    echo "<h4 class='cat_t'>CATEGORIES</h4>";
     $get_cats="SELECT * FROM categories";
     $run=mysqli_query($conn,$get_cats);
     while($row=mysqli_fetch_array($run)){
@@ -37,6 +38,7 @@ function getIp(){
 function getbrands(){
     global $conn;
     $get_brands="SELECT * FROM brands";
+    echo "<h4 class='brand_t'>BRANDS<h4>";
     $run=mysqli_query($conn,$get_brands);
     while($row=mysqli_fetch_array($run)){
         $brand_id=$row['brand_id'];
@@ -62,9 +64,9 @@ function getproducts(){
         $pro_desc=$row['product_desc'];
         $pro_image=$row['product_image'];
         $pro_keyword=$row['product_keyword'];
-        echo "<div id='single_product'>
+        echo "<div id='single_product' class='single_pro'>
         <h3 class='pro_title'>$pro_title</h3>
-        <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'>    
+       <a href='admin/product_img/$pro_image'> <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='details.php?pro_id=$pro_id'>Details</a>
        <a href='index.php?pro_id=$pro_id' name='add_cart'><button style='float:right'>Add to cart</button></a>

@@ -12,24 +12,44 @@ width:100px;
 width: 1400px;
 
 
-background: pink;
+background: white;
 } 
 .menubar{
     width:1400px;
-  padding:1%;
-    background: gray;
+
+    background: #0f82b8;
+    border:2px solid orange;
     display: flex;
     position: fixed;
     z-index: 12;
-
+padding: 1%;
     align-items: center;
 }
-.menubar li{
+.menubar li a{
 font-size: 18px;
 font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
-color: white;
-margin-left: 2%;
+color: white ;
+
+}
+.cat_t,.brand_t,.login{
+    font-weight: bold;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type='submit'],.checkout{
+    border-radius: 10%;
+   background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+input[type='submit']:hover,.checkout:hover{
+    color:blue;
+    background: white;
+cursor: pointer;
+text-decoration: none;
 }
 .menu-list{
 display: flex;
@@ -41,14 +61,15 @@ align-content: center;
 #sidebar{
     width: 200px;
 
-background: black;
+background: #0f82b8;
 /* position: fixed;
 z-index: 10; */
 margin-top: 70px;
+border: 2px solid orange
 }
 #content_area{
     width: 1200px;
-background: pink;
+background: white;
 
 margin-top: 100px;
 }
@@ -81,10 +102,14 @@ height: 200px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
-.side-menu a:hover,.brands a:hover{
+.side-menu li:hover,.brands li:hover{
     background: white;
  text-decoration: none !important;
+ color:black !important;
+}
+.side-menu a:hover,.brands a:hover{
     color:black !important;
+    text-decoration: none;
 }
 #product_box{
     text-align: center;
@@ -102,7 +127,12 @@ height: 200px;
 border:1px solid black;
     margin-left: 20px;
 }
-
+.single_pro{
+    box-shadow: 5px 7px lightgray;
+}
+.single_pro:hover{
+    box-shadow: 4px 6px 4px 4px gray;  
+}
 .cart{
 color:blue !important;
 font-weight: bold !important;

@@ -24,22 +24,16 @@ session_start();
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li><a href="index.php">Home</a></li>
-      
-        <li>My Account</li>
-        <li>Sign up</li>
-        <li>Shopping Cart</li>
-        <li>Contact us</li>
-
+<li><a href="index.php">Home</a></li>
+        <li> <a href="myacc.php">My Account</a></li>
+        <li><a href="register.php">Sign up</a></li>
+        <li><a href="cart.php">Shopping Cart</a></li>
+        <li> <a href="admin/admin.php">Admin</a></l>
+        <li> <a href="#">Contact us</a></li>
 
 </ul>
 </div>
 
-<form class="col-md-3" id="form">
-<input type="text" name="user_query" placeholder="search a product" >
-<input type="submit" name="search" value="search">
-
-</form>
 
 </div>
 <div class="row content_wrapper">

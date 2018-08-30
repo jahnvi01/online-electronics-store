@@ -23,13 +23,11 @@ session_start();
 <div class="col-md-7">
 <ul class="menu-list">
         <li><a href="index.php">Home</a></li>
-      
         <li> <a href="myacc.php">My Account</a></li>
-        <li>Sign up</li>
-        <li>Shopping Cart</li>
-        <li>Contact us</li>
-
-
+        <li><a href="register.php">Sign up</a></li>
+        <li><a href="cart.php">Shopping Cart</a></li>
+        <li> <a href="admin/admin.php">Admin</a></l>
+        <li> <a href="#">Contact us</a></li>
 </ul>
 </div>
 
@@ -51,7 +49,8 @@ session_start();
      </ul>
 
 <ul class="brands">
-   <?php getbrands();?>
+
+<?php getbrands();?>
 
 </ul>
 
@@ -60,10 +59,10 @@ session_start();
 
 </div>
 <div id="content_area" class="col-md-10">
-    <div id="shop_cart">
+   <!-- <div id="shop_cart">
 <h4><a href="cart.php" class="cart">Go to cart</a></h4>
 
-</div>
+</div>  -->
 <?php
 addcart();
 ?>
@@ -87,9 +86,9 @@ searchproducts();
 </div>
 </div>
 </div>
-<div id="footer" class="row">
+<!-- <div id="footer" class="row">
 
-</div>
+</div> -->
     </div>
 	
     </body>

@@ -22,12 +22,12 @@ include 'function/check.php';
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        <li>Home</li>
-      
-        <li>My Account</li>
-        <li>Sign up</li>
-        <li>Shopping Cart</li>
-        <li>Contact us</li>
+<li><a href="index.php">Home</a></li>
+        <li> <a href="myacc.php">My Account</a></li>
+        <li><a href="register.php">Sign up</a></li>
+        <li><a href="cart.php">Shopping Cart</a></li>
+        <li> <a href="admin/admin.php">Admin</a></l>
+        <li> <a href="#">Contact us</a></li>
 
 
 </ul>
@@ -79,7 +79,7 @@ showcart();
 <div class="buttons">
  <input value="Continue" name="continue" type="submit">
  <input type="submit" value="Update" name="update">
-<button name='checkout'>  <a href="checkout.php"> Check Out</a> </button>
+<button name='checkout' class='checkout'>  <a href="checkout.php" class='checkout'> Check Out</a> </button>
 
 </div>
 </form>
