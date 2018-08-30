@@ -1,0 +1,148 @@
+
+body{
+    background-color:white;
+    overflow-x: hidden;
+    }
+    .main_wrapper{
+    height: auto;
+    width:100px;
+    
+    }
+    .content_wrapper{
+    width: 1400px;
+    
+    
+    background: white;
+    }
+    #title{
+        text-align: center;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+
+    } 
+    /* #product_box{
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 10px;
+    } */
+    .menubar{
+        width:1400px;
+      padding:1%;
+        background:  #187eae;
+        display: flex;
+        position: fixed;
+        z-index: 12;
+    border-bottom:2px solid orange;
+        align-items: center;
+    }
+    .menubar li{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-left: 2%;
+    }
+    .menu-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style:none;
+    align-content: center;
+    }
+    #sidebar{
+        width: 200px;
+    border:2px solid orange;
+    background: #187eae;
+    /* position: fixed;
+    z-index: 10; */
+    margin-top: 70px;
+    }
+    #content_area,#list_area{
+        width: 1200px;
+    background: white;
+    
+    margin-top: 100px;
+    }
+    #list_area{
+        margin-top: 0px;
+    }
+    #footer{
+        width: 1400px;
+    background:  #187eae;
+    height: 200px;
+    }
+  .catlist,.brandlist{
+      padding:5%;
+      width: 75%;
+margin: 5%;  
+border: 2px solid #187eae;
+}
+  .catlist h5,.brandlist h5
+  {
+      font-weight: bold;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: underline;
+  }  
+    #sidebar{
+        display: flex;
+        flex-direction: column;
+    
+        padding-top:3%;
+    
+    }
+    #sidebar{
+        list-style: none;
+    }
+    #sidebar a{
+        color:white;
+        font-size: 20px;
+        margin-bottom: 6%;
+        margin-top: 6%;
+        text-decoration: none !important;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+ #sidebar a:hover{
+     color:orange;
+  font-size: 22px;
+ }
+
+#single_product{
+   
+  color:black;
+display: flex;
+align-items: center;
+justify-content: space-around;
+border:1px solid black;
+  
+}
+.brand,.cat{
+
+ 
+    color:orange;
+}
+.list{
+  
+    display: flex;
+
+}
+.customers{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.cus_row{
+    border: 2px solid skyblue;
+margin: 3%;
+padding: 1%;
+}
+.cus_row td{
+    padding:3%;
+
+}
+#list_area{
+    display: flex;
+}

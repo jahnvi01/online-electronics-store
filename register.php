@@ -109,6 +109,7 @@ $run=mysqli_query($conn,$insert1);
 $show="SELECT * FROM customers WHERE c_ip='$ip'";
 $run=mysqli_query($conn,$show);
 $check=mysqli_num_rows($run);
+session_start();
 $_SESSION['c_mail']=$c_mail;
 if($check==0){
 

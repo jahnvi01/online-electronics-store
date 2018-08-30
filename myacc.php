@@ -43,26 +43,17 @@ session_start();
 <div class="row content_wrapper">
     <div id="sidebar" class="col-md-2">
     <ul class="side-menu">
- <?php 
- getcats();
- ?>
+    <li><a href="#">My orders</a></li>
+<li><a href="#">Edit account</a></li>
+<li><a href="#">Change password</a></li>
+<li><a href="#">Delete account</a></li>
 
      </ul>
 
-<ul class="brands">
-   <?php getbrands();?>
-
-</ul>
 
 </div>
 <div id="content_area" class="col-md-10">
-    <div id="shop_cart">
-<h4><a href="cart.php" class="cart">Go to cart</a></h4>
-
-</div>
-<?php
-addcart();
-?>
+   
 <div class="login"> 
 <?php
 if(!isset($_SESSION['c_mail'])){
@@ -75,6 +66,27 @@ else{
 </div>
 <div id="product_box">
 <?php
+$user=$_SESSION['c_mail'];
+$info="SELECT * FROM customers WHERE C_mail='$user'";
+
+$run=mysqli_query($conn,$info);
+while($row=mysqli_fetch_array($run)){
+    $name=$row['c_name'];
+    $country=$row['c_country'];
+    $city=$row['c_city'];
+    $contact=$row['c_contact'];
+    $address=$row['c_address'];
+    echo"<h3>Hello $name<h3>
+    <h3>e-mail: $user<h3>
+    <h3>country: $country<h3>
+    <h3>city:  $city<h3>
+    <h3>Contact: $contact<h3>
+    <h3>address:  $address<h3>    
+    
+    ";
+
+}
+
 
 ?>
 </div>

@@ -24,7 +24,7 @@ session_start();
 <ul class="menu-list">
         <li><a href="index.php">Home</a></li>
       
-        <li>My Account</li>
+        <li> <a href="myacc.php">My Account</a></li>
         <li>Sign up</li>
         <li>Shopping Cart</li>
         <li>Contact us</li>
@@ -43,7 +43,8 @@ session_start();
 <div class="row content_wrapper">
     <div id="sidebar" class="col-md-2">
     <ul class="side-menu">
- <?php 
+
+   <?php 
  getcats();
  ?>
 
@@ -53,6 +54,9 @@ session_start();
    <?php getbrands();?>
 
 </ul>
+
+
+
 
 </div>
 <div id="content_area" class="col-md-10">
