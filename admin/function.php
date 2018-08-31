@@ -95,6 +95,7 @@ function customer(){
     echo "
     <table align='center' class='customers' >
     <tr class='cus_row'>
+    <th>NO:</th>
     <th>Name</th>
     <th>email</th>
     <th>country</th>
@@ -104,8 +105,9 @@ function customer(){
     </tr>
     ";
     
-$list="SELECT * FROM customers";
+$list="SELECT * FROM customers ORDER BY c_country,c_city ASC";
 global $conn;
+$count=1;
 $run=mysqli_query($conn,$list);
 while($row=mysqli_fetch_array($run)){
    $name=$row['c_name'];
@@ -115,13 +117,15 @@ while($row=mysqli_fetch_array($run)){
    $city=$row['c_city'];
    $address=$row['c_address'];
     echo " <tr class='cus_row'>
-   <td>$name</td>
+   <td>$count</td>
+    <td>$name</td>
    <td>$mail</td>
    <td>$country</td>
    <td>$city</td>
    <td>$contact</td>
    <td>$address</td>
    </tr>";
+   $count++;
 }
     echo"
    </table> 

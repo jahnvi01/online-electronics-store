@@ -13,21 +13,32 @@ include 'function/function.php';
             crossorigin="anonymous">
 <style>
 body{
-    background:skyblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 td{
     padding:3%;
     font-size:16px;
     font-weight:bold;
 }
+td,.register{
+    text-shadow: 5px 5px 10px  black;
+    text-align:center;
+ color:white;
+}
+table{
+    border:2px solid white;
+}
+  
     </style>
 
     </head>
     
-    <body>
-        <h2 style="text-align:center;"> Register/Sign up</h2>
+    <body  background="images/background.jpeg">
+        <h2 class="register"> Login/Sign in</h2>
 <form action="checkout.php" method="post" enctype="multipart/form-data"> 
-<table align="center" width="500" border="2">
+<table align="center" width="500">
 <tr align="center">
     <td align="right">E-mail:</td>
 <td align="left"><input type="email" name="email" required></td>
@@ -40,7 +51,7 @@ td{
 </td>
     </tr>
 <tr align="center"><td><input type="submit" name="login" value="login" align="center" required></td>
-<td><h4><a href="register.php">NEW?? Register here!!!</a><h4></td>
+<td><h4><a class="register" href="register.php">NEW?? Register here!!!</a><h4></td>
 </tr>
 
 </table>

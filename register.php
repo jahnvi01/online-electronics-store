@@ -11,22 +11,33 @@ include 'admin/includes/db.php';
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
             crossorigin="anonymous">
 <style>
-body{
-    background:skyblue;
-}
+
 td{
     padding:3%;
     font-size:16px;
     font-weight:bold;
+
+}
+td,.register{
+    text-shadow: 5px 5px 10px  black;
+    text-align:center;
+ color:white;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+table{
+    border:2px solid white;
 }
     </style>
 
     </head>
     
-    <body>
-        <h2 style="text-align:center;"> Register/Sign up</h2>
+    <body background="images/background.jpeg">
+        <h2  class="register" > Register/Sign Up</h2>
 <form action="" method="post" enctype="multipart/form-data"> 
-<table align="center" width="500" border="2">
+<table align="center" width="500" >
 <tr align="center">
     <td align="right">Name: </td>
 <td align="left">

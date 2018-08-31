@@ -11,18 +11,37 @@ include 'includes/db.php';
             crossorigin="anonymous">
 <style>
 body{
-    background:skyblue;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 td{
     padding:3%;
     font-size:16px;
     font-weight:bold;
 }
+td,.register{
+    text-shadow: 5px 5px 10px  black;
+    text-align:center;
+ color:white;
+}
+.add{
+    border-radius:10%;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    color:darkblue;
+    background:white;
+
+}
+table{
+    border:2px solid white;
+}
     </style>
 
     </head>
     
-    <body>
+    <body background="../images/background.jpeg">
+    <h2  class="register" > Insert new product</h2>
 <form action="" method="post" enctype="multipart/form-data"> 
 <table align="center" width="500" border="2">
 <tr align="center">
@@ -90,7 +109,7 @@ $get_cats="SELECT * FROM categories";
 
  
  <tr align="center">
-<td colspan="8"><input type="submit" name="insert11" value="insert"></td>
+<td colspan="8"><input type="submit" class="add" name="insert11" value="insert"></td>
     </tr>
    
 </table>
@@ -118,9 +137,9 @@ if(isset($_POST['insert11']))
 $insert1="INSERT INTO products (product_cat,product_brand,product_title,product_price,product_desc,product_image,product_keyword) VALUES ('$product_cat','$product_brand','$product_title','$product_price','$product_desc','$product_image','$product_keyword')";
 $run=mysqli_query($conn,$insert1);
 
-if($run){
 
-    echo"<script>locaion.href='../index.php'</script>";
-}
+
+    echo"<script>alert('Product added to Home page')</script>";
+
 }
 ?>

@@ -44,6 +44,7 @@ function getbrands(){
         $brand_id=$row['brand_id'];
         $brand_title=$row['brand_title'];
         echo "<li><a href='index.php?brand=$brand_id'> $brand_title</a></li>";
+
     }
 }
 //showing products on page
@@ -87,7 +88,7 @@ function showcats(){
     $run=mysqli_query($conn,$get_cats);
     while($row=mysqli_fetch_array($run)){
        
-   
+        $pro_id=$row['product_id'];
         $pro_cat=$row['product_cat'];
         $pro_brand=$row['product_brand'];
         $pro_title=$row['product_title'];
@@ -99,8 +100,8 @@ function showcats(){
         <h3 class='pro_title'>$pro_title</h3>
         <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'>    
        <h4 class='pro_price'>Price: $pro_price</h4>
-       <a href='details.php?pro_id=$cat_id'>Details</a>
-       <a href='index.php?pro_id=$cat_id'><button style='float:right'>Add to cart</button></a>
+       <a href='details.php?pro_id=$pro_id'>Details</a>
+       <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>
        </div>";
     }
 }
@@ -117,7 +118,7 @@ function showbrands(){
     $run=mysqli_query($conn,$get_brands);
     while($row=mysqli_fetch_array($run)){
        
-   
+   $pro_id=$row['product_id'];
         $pro_cat=$row['product_cat'];
         $pro_brand=$row['product_brand'];
         $pro_title=$row['product_title'];
@@ -129,8 +130,8 @@ function showbrands(){
         <h3 class='pro_title'>$pro_title</h3>
         <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'>    
        <h4 class='pro_price'>Price: $pro_price</h4>
-       <a href='details.php?pro_id=$brand_id'>Details</a>
-       <a href='index.php?pro_id=$brand_id'><button style='float:right'>Add to cart</button></a>
+       <a href='details.php?pro_id=$pro_id'>Details</a>
+       <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>
        </div>";
     }
 }
