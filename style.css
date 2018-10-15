@@ -25,7 +25,7 @@ background: white;
 padding: 1%;
     align-items: center;
 }
-.menubar li a{
+.menu-list li a{
 font-size: 18px;
 font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
@@ -62,16 +62,14 @@ align-content: center;
     width: 200px;
 
 background: #0f82b8;
-/* position: fixed;
-z-index: 10; */
-margin-top: 70px;
-border: 2px solid orange
+margin-top: 120px;
+border: 2px solid orange;
 }
 #content_area{
     width: 1200px;
 background: white;
 
-margin-top: 100px;
+margin-top: 130px;
 }
 
 #footer{
@@ -79,11 +77,31 @@ margin-top: 100px;
 background: gray;
 height: 200px;
 }
+#search{
+    width: 500px;
+}
 #form{
 
     float: right;
 }
-
+.side-list{
+    list-style: none;
+    text-align: center;
+}
+.cart,.wishlist{
+    padding: 2%;
+    margin-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color:white ;
+    border: 2px solid blue;
+    color: #0f82b8;
+}
+.cart:hover,.wishlist:hover{
+    text-decoration: none;
+    background: gray;
+    color:black;
+}
 .side-menu,.brands{
     display: flex;
     flex-direction: column;
@@ -119,6 +137,9 @@ height: 200px;
 
     margin-bottom: 10px;
 }
+/* .head-product{
+    display: flex;
+} */
 #single_product{
     padding:3%;
   color:black;
@@ -133,14 +154,24 @@ border:1px solid black;
 .single_pro:hover{
     box-shadow: 4px 6px 4px 4px gray;  
 }
-.cart{
-color:blue !important;
-font-weight: bold !important;
-font-family: Arial, Helvetica, sans-serif;
-background: wheat !important;
-padding: 1%;
-border-radius: 5%;
-border :1 px solid gray;
+.addwish{
+    float: right;
+}
+.msg{
+
+display:none;
+
+}
+.show{
+    color:blue !important;
+    font-weight: bold !important;
+    font-family: Arial, Helvetica, sans-serif;
+    background: wheat !important;
+    padding: 1%;
+    display:block;
+    border-radius: 5%;
+    border :1 px solid black;
+
 }
 .pro_img{
     border: 2px solid gray;

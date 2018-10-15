@@ -25,17 +25,35 @@ session_start();
         <li><a href="index.php">Home</a></li>
         <li> <a href="myacc.php">My Account</a></li>
         <li><a href="register.php">Sign up</a></li>
-        <li><a href="cart.php">Shopping Cart</a></li>
+        <li class="login"> 
+<?php
+if(!isset($_SESSION['c_mail'])){
+echo "<a href='checkout.php'>Login</a>";
+}
+else{
+    echo "<a href='logout.php'>Logout</a>";
+}
+?>
+</li>
+        
         <li> <a href="admin/admin.php">Admin</a></l>
         <li> <a href="#">Contact us</a></li>
 </ul>
-</div>
 
-<form class="col-md-3" id="form">
-<input type="text" name="user_query" placeholder="search a product" >
+<form  id="form">
+<input type="text" id="search" name="user_query" placeholder="search a product" >
 <input type="submit" name="search" value="search">
 
 </form>
+
+</div>
+<div class="col-md-3">
+<ul class="side-list">
+<li><a href="cart.php" class="cart">Shopping Cart</a></li>
+<br>
+<li><a href="wishlist.php" class="wishlist">Wishlist</a></li>
+</ul>
+</div>
 
 </div>
 <div class="row content_wrapper">
@@ -58,24 +76,12 @@ session_start();
 
 
 </div>
-<div id="content_area" class="col-md-10">
-   <!-- <div id="shop_cart">
-<h4><a href="cart.php" class="cart">Go to cart</a></h4>
-
-</div>  -->
+<div id='content_area' class='col-md-10'>
 <?php
 addcart();
+
 ?>
-<div class="login"> 
-<?php
-if(!isset($_SESSION['c_mail'])){
-echo "<a href='checkout.php'>Login</a>";
-}
-else{
-    echo "<a href='logout.php'>Logout</a>";
-}
-?>
-</div>
+
 <div id="product_box">
 <?php
 getproducts();
@@ -86,11 +92,9 @@ searchproducts();
 </div>
 </div>
 </div>
-<!-- <div id="footer" class="row">
 
-</div> -->
     </div>
-	
-    </body>
 
+    </body>
+ 
     </html>

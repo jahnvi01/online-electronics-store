@@ -16,23 +16,39 @@ session_start();
     
     <body>
 	<div class="main_wrapper">
-<div class="row menubar">
+    <div class="row menubar">
     <div class="col-md-2">
 <img id="logo" src="images/logo.svg" width="150" height="50">
 </div>
 <div class="col-md-7">
 <ul class="menu-list">
-        
-<li><a href="index.php">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li> <a href="myacc.php">My Account</a></li>
         <li><a href="register.php">Sign up</a></li>
-        <li><a href="cart.php">Shopping Cart</a></li>
+        <li class="login"> 
+<?php
+if(!isset($_SESSION['c_mail'])){
+echo "<a href='checkout.php'>Login</a>";
+}
+else{
+    echo "<a href='logout.php'>Logout</a>";
+}
+?>
+</li>
+        
         <li> <a href="admin/admin.php">Admin</a></l>
         <li> <a href="#">Contact us</a></li>
+</ul>
 
+
+</div>
+<div class="col-md-3">
+<ul class="side-list">
+<li><a href="cart.php" class="cart">Shopping Cart</a></li>
+<br>
+<li><a href="wishlist.php" class="wishlist">Wishlist</a></li>
 </ul>
 </div>
-
 
 </div>
 <div class="row content_wrapper">
@@ -49,16 +65,6 @@ session_start();
 </div>
 <div id="content_area" class="col-md-10">
    
-<div class="login"> 
-<?php
-if(!isset($_SESSION['c_mail'])){
-echo "<a href='checkout.php'>Login</a>";
-}
-else{
-    echo "<a href='logout.php'>Logout</a>";
-}
-?>
-</div>
 <div id="product_box">
 <?php
 $user=$_SESSION['c_mail'];

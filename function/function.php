@@ -5,7 +5,7 @@ $username= "root";
 $password = "jahnvi123";
 $dbname = "ecommerce";
 
-
+session_start();
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 function getIp(){
@@ -47,6 +47,8 @@ function getbrands(){
 
     }
 }
+
+
 //showing products on page
 function getproducts(){
     global $conn;
@@ -65,18 +67,43 @@ function getproducts(){
         $pro_desc=$row['product_desc'];
         $pro_image=$row['product_image'];
         $pro_keyword=$row['product_keyword'];
+      
         echo "<div id='single_product' class='single_pro'>
-        <h3 class='pro_title'>$pro_title</h3>
+        ";
+        if(isset($_SESSION['c_mail'])){
+         $user=$_SESSION['c_mail'];
+         $check="SELECT * FROM wishlist WHERE email='$user' AND p_id='$pro_id' ";
+         $run1=mysqli_query($conn,$check);
+        
+             if(mysqli_num_rows($run1)==1){
+                echo"
+                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish'  src='images/wish1.png' width='20' height='20'></a>
+                ";
+             }
+             else{
+                echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ 
+             }
+            }
+ else{
+   echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ }
+            
+       echo"
+       <h3 class='pro_title'>$pro_title</h3>  
        <a href='admin/product_img/$pro_image'> <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='details.php?pro_id=$pro_id'>Details</a>
-       <a href='index.php?pro_id=$pro_id' name='add_cart'><button style='float:right'>Add to cart</button></a>
+       <a href='index.php?pro_id=$pro_id'><button name='add_cart' style='float:right'>Add to cart</button></a>
+       
        </div>";
+ 
     }
 }
     
 }
     }
+  
 }
 
 
@@ -96,13 +123,36 @@ function showcats(){
         $pro_desc=$row['product_desc'];
         $pro_image=$row['product_image'];
         $pro_keyword=$row['product_keyword'];
-        echo "<div id='single_product'>
-        <h3 class='pro_title'>$pro_title</h3>
-        <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'>    
+        echo "<div id='single_product' class='single_pro'>
+        ";
+        if(isset($_SESSION['c_mail'])){
+         $user=$_SESSION['c_mail'];
+         $check="SELECT * FROM wishlist WHERE email='$user' AND p_id='$pro_id' ";
+         $run1=mysqli_query($conn,$check);
+        
+             if(mysqli_num_rows($run1)==1){
+                echo"
+                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish'  src='images/wish1.png' width='20' height='20'></a>
+                ";
+             }
+             else{
+                echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ 
+             }
+            }
+ else{
+   echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ }
+            
+       echo"
+       <h3 class='pro_title'>$pro_title</h3>  
+       <a href='admin/product_img/$pro_image'> <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='details.php?pro_id=$pro_id'>Details</a>
-       <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>
+       <a href='index.php?pro_id=$pro_id'><button name='add_cart' style='float:right'>Add to cart</button></a>
+       
        </div>";
+ 
     }
 }
 }
@@ -118,7 +168,7 @@ function showbrands(){
     $run=mysqli_query($conn,$get_brands);
     while($row=mysqli_fetch_array($run)){
        
-   $pro_id=$row['product_id'];
+        $pro_id=$row['product_id'];
         $pro_cat=$row['product_cat'];
         $pro_brand=$row['product_brand'];
         $pro_title=$row['product_title'];
@@ -126,13 +176,36 @@ function showbrands(){
         $pro_desc=$row['product_desc'];
         $pro_image=$row['product_image'];
         $pro_keyword=$row['product_keyword'];
-        echo "<div id='single_product'>
-        <h3 class='pro_title'>$pro_title</h3>
-        <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'>    
+        echo "<div id='single_product' class='single_pro'>
+        ";
+        if(isset($_SESSION['c_mail'])){
+         $user=$_SESSION['c_mail'];
+         $check="SELECT * FROM wishlist WHERE email='$user' AND p_id='$pro_id' ";
+         $run1=mysqli_query($conn,$check);
+        
+             if(mysqli_num_rows($run1)==1){
+                echo"
+                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish'  src='images/wish1.png' width='20' height='20'></a>
+                ";
+             }
+             else{
+                echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ 
+             }
+            }
+ else{
+   echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ }
+            
+       echo"
+       <h3 class='pro_title'>$pro_title</h3>  
+       <a href='admin/product_img/$pro_image'> <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='details.php?pro_id=$pro_id'>Details</a>
-       <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>
+       <a href='index.php?pro_id=$pro_id'><button name='add_cart' style='float:right'>Add to cart</button></a>
+       
        </div>";
+ 
     }
 }
 }
@@ -153,13 +226,38 @@ if(isset($_GET['search'])){
         $pro_desc=$row['product_desc'];
         $pro_image=$row['product_image'];
         $pro_keyword=$row['product_keyword'];
-        echo "<div id='single_product'>
-        <h3 class='pro_title'>$pro_title</h3>
-        <img class='pro_img'  width='180' height='180' src='admin/product_img/$pro_image'>    
+        echo "<div id='single_product' class='single_pro'>
+        ";
+        if(isset($_SESSION['c_mail'])){
+         $user=$_SESSION['c_mail'];
+         $check="SELECT * FROM wishlist WHERE email='$user' AND p_id='$pro_id' ";
+         $run1=mysqli_query($conn,$check);
+        
+             if(mysqli_num_rows($run1)==1){
+                echo"
+                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish'  src='images/wish1.png' width='20' height='20'></a>
+                ";
+             }
+             else{
+                echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ 
+             }
+            }
+ else{
+   echo" <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish' src='images/wish.png' width='20' height='20'></a>";
+ }
+            
+       echo"
+       <h3 class='pro_title'>$pro_title</h3>  
+       <a href='admin/product_img/$pro_image'> <img class='pro_img' width='180' height='180' src='admin/product_img/$pro_image'> </a>   
        <h4 class='pro_price'>Price: $pro_price</h4>
        <a href='details.php?pro_id=$pro_id'>Details</a>
-       <a href='index.php?pro_id=$pro_id'><button style='float:right'>Add to cart</button></a>
+       <a href='index.php?pro_id=$pro_id'><button name='add_cart' style='float:right'>Add to cart</button></a>
+       
        </div>";
+ 
+  
+    
     }
 }
 }
@@ -172,11 +270,10 @@ $id=$_GET['pro_id'];
 $check="SELECT * FROM cart WHERE ip='$ip' AND p_id='$id'";
 $run=mysqli_query($conn,$check);
 if(mysqli_num_rows($run)>0){
-    echo "";
+    echo "<script>alert('product already added') </script>";
 }
 else{
-
-    $insert="INSERT INTO cart (p_id,ip,qty) VALUES ('$id','$ip','0')";
+  $insert="INSERT INTO cart (p_id,ip,qty) VALUES ('$id','$ip','0')";
 $run=mysqli_query($conn,$insert);
     echo "<script>alert('product added to the cart') </script>";
 }
@@ -184,7 +281,6 @@ $run=mysqli_query($conn,$insert);
 }
 
 }
-
 
 
 function showcart(){
@@ -201,8 +297,9 @@ $qty=array();
     while($row=mysqli_fetch_array($run)){
         $id=$row['p_id'];
     $idd[$i]=$id;
-   echo "<script>console.log('$idd[$i]')</script>";   
+  
     $qty=$row['qty'];
+    echo "<script>console.log('$qty')</script>"; 
     $total_item=$qty+$total_item;
         $singleprize="SELECT * FROM products WHERE product_id='$id'";
         $result=mysqli_query($conn,$singleprize);
@@ -237,10 +334,14 @@ $qty=array();
 
     if(isset($_POST['checkout'])){
   if(!isset($_SESSION['c_mail']))
-  {include('checkout.php');  
-  }
+  {
+    echo "<script>alert('$_SESSION[c_mail]') </script>";  
+    header("location:checkout.php"); 
+  } 
   else{
-      include('payment.php');
+    $j=$_SESSION['c_mail'];
+
+    header("location:payment.php");
   }
     }  
  
@@ -257,11 +358,11 @@ $qty=array();
   
        foreach($_POST['qty'] as $qty){
  $qnt[$x]=$qty;
-    echo "<script>console.log('$qnt[$x]')</script>";
+ 
 $x++;    
 }
-   for($i=0;$i<$x;$i++){
-  echo "<script>alert('$qnt[$i]')</script>";
+   for($i=0;$i<=$x;$i++){
+  
     $quantity="UPDATE cart SET qty='$qnt[$i]'  WHERE p_id='$idd[$i]' AND ip='$ip' ";   
     $run=mysqli_query($conn,$quantity);
 
@@ -279,15 +380,6 @@ header("location:cart.php");
 
 }
 
-// function button(){
-//     global $conn;
-//     $ip=getIp();
-      //      $quantity="UPDATE cart SET qty='$qnt[$x]'";
-        //    $test=mysqli_query($conn,$quantity);
-          //  $x++;
-        //global $q;
-        // $q=$_SESSION['qty'];
-// }
+       
+
 ?>
-
-
