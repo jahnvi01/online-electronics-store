@@ -122,11 +122,14 @@ showwishlist();
 
     <?php
     function addwish() 
-    {    $id=$_GET['pro_id'];
+    { 
+        
+        $id=$_GET['pro_id'];
         $user=$_SESSION['c_mail'];
      global $conn;
     if(isset($_GET['pro_id']))
-    {
+    { 
+        //header("location:index.php"); 
         if(isset($_SESSION['c_mail'])){
             
         $check="SELECT * FROM wishlist WHERE email='$user' AND p_id='$id' ";
@@ -137,7 +140,7 @@ showwishlist();
                 $add="INSERT INTO wishlist (p_id,email) VALUES ('$id','$user')";
                 $r=mysqli_query($conn,$add);
              
-                //header("location:index.php");  
+               
             }
         
      
@@ -188,7 +191,7 @@ showwishlist();
     }
     $user=$_SESSION['c_mail'];
     if(isset($_POST['continue'])){
-        header("location:javascript://history.go(-1)");
+  header("location:index.php"); 
     }
     if(isset($_POST['update'])){
   

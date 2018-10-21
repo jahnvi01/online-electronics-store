@@ -77,7 +77,7 @@ function getproducts(){
         
              if(mysqli_num_rows($run1)==1){
                 echo"
-                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist' class='addwish'  src='images/wish1.png' width='20' height='20'></a>
+                <a href='wishlist.php?pro_id=$pro_id' name='wishlist'> <img name='wishlist'  class='addwish'  src='images/wish1.png' width='20' height='20'></a>       
                 ";
              }
              else{
@@ -270,7 +270,7 @@ $id=$_GET['pro_id'];
 $check="SELECT * FROM cart WHERE ip='$ip' AND p_id='$id'";
 $run=mysqli_query($conn,$check);
 if(mysqli_num_rows($run)>0){
-    echo "<script>alert('product already added') </script>";
+  
 }
 else{
   $insert="INSERT INTO cart (p_id,ip,qty) VALUES ('$id','$ip','0')";

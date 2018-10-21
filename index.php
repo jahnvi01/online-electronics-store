@@ -1,6 +1,7 @@
 <?php 
 include 'function/function.php';
 session_start();
+
 ?>
 <html>
 
@@ -84,6 +85,7 @@ addcart();
 
 <div id="product_box">
 <?php
+
 getproducts();
 showcats();
 showbrands();
